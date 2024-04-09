@@ -12,7 +12,7 @@ app.use(express.static(path.resolve(__dirname, "../public" )));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
 
-app.listen("3001", () => console.log("Servidor corriendo en el puerto 3001"));
+app.listen("3004", () => console.log("Servidor corriendo en el puerto 3004"));
 
 const indexRouter = require("./routes/index");
 app.use("/", indexRouter)

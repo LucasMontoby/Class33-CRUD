@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Add</title>
+</head>
+<body>
+    <div>
+        <img src="/img/Pelicula.webp" alt="Películas">
+    </div>
+
+    <h1>Agregar Película</h1>
+
+    <section>
+        <form action="/movies/create" method="POST">
+    
+            <label for="title">Título:</label>
+            <input type="text" name="title" id="title" required>
+            
+            <label for="rating">Calificación:</label>
+            <input type="number" name="rating" id="rating" required>
+            
+            <label for="awards">Premios:</label>
+            <input type="number" name="awards" id="awards" required>
+            
+            <label for="release_date">Fecha de creación:</label>
+            <input type="date" name="release_date" id="release_date" required>
+            
+            <label for="length">Duración:</label>
+            <input type="number" name="length" id="length" required>
+    
+            <label for="genre_id">Género:</label>
+            <select name="genre_id" id="genre_id" required>
+                <option value="" disabled selected>Seleccione el Género</option>
+                <% allGenres.forEach(genre => { %>
+                    <option value="<%= genre.id %>"><%= genre.name %></option>
+                <% }) %>
+            </select>
+    
+            <button type="submit">Agregar Película</button>
+            <a href="/movies">Listado de Películas</a>
+    
+        </form>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %></title>
+</head>
+<body>
+    <div>
+        <img src="/img/Pelicula.webp" alt="Películas">
+    </div>
+
+    <h1><%= movie.title %></h1>
+    <br>
+    <p>Calificación: <%= movie.rating %></p>
+    <p>Premios: <%= movie.awards %></p>
+    <p>Duración: <%= movie.length + " minutos" %>.</p>
+    <p>Fecha de creación: <%= movie.release_date %></p>
+    <br>
+
+    <section>
+        <a class="botonModificar" href="/movies/edit/<%=movie.id%>">Modificar</a>
+        <a class="botonBorrar" href="/movies/delete/<%=movie.id%>">Borrar</a>
+        <a class="botonVolver" href="/movies">Listado de Películas</a>
+    </section>
+    
+</body>
+</html>

@@ -12,10 +12,13 @@
 
     <h1>LISTADO DE PELÍCULAS</h1>
 
+    <a href="/movies/add">Agregar Una Película</a>
+    <a href="/">Inicio</a>
+
         <ul>
             <% movies.map(function(movie) { %>
                 <li>
-                    <%= movie.title %>
+                   <a href="/movies/detail/<%=movie.id%>"><%= movie.title %></a> 
                 </li>
             <% }) %>
         </ul>
