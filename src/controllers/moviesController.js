@@ -85,9 +85,23 @@ const moviesController = {
         .then(()=> {
             return res.redirect('/movies')})            
         .catch(error => res.send(error))
+    },
+
+    delete: function(req, res){
+        let movieID = req.params.id;
+        Movies.findByPk(movieID)
+        .then(Movie=> {
+            return res.render(path.resolve(__dirname, '..', 'views',  'moviesDelete'), {Movie})})
+            .catch(error => res.send(error))
+    },
+
+    destroy: function(req, res){
+        let movieID = req.params.id;
+        Movies.destroy({where:{id: movieID}})
+        .then(() =>{return res.redirect('/movies')})
+        .catch(error => res.send(error));
     }
-                    
-                                
+                           
 }
 
 module.exports = moviesController;
